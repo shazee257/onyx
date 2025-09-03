@@ -36,8 +36,7 @@ export default function AccessRestricted() {
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(
-          `Failed to create customer portal session: ${
-            errorData.message || response.statusText
+          `Failed to create customer portal session: ${errorData.message || response.statusText
           }`
         );
       }
@@ -90,11 +89,11 @@ export default function AccessRestricted() {
       </h1>
       <div className="space-y-4 text-gray-600 dark:text-gray-300">
         <p>
-          We regret to inform you that your access to Onyx has been temporarily
+          We regret to inform you that your access to Gen.Ai has been temporarily
           suspended due to a lapse in your subscription.
         </p>
         <p>
-          To reinstate your access and continue benefiting from Onyx&apos;s
+          To reinstate your access and continue benefiting from Gen.Ai&apos;s
           powerful features, please update your payment information.
         </p>
         <p>

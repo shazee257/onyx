@@ -96,7 +96,7 @@ def test_jira_connector_basic(reset: None, jira_connector: JiraConnector) -> Non
     section = story.sections[0]
     assert (
         section.text
-        == "This is a critical request for super-human answer quality in Onyx! We need magic!\n"
+        == "This is a critical request for super-human answer quality in Gen.Ai! We need magic!\n"
     )
     assert section.link == "https://danswerai.atlassian.net/browse/AS-3"
 
@@ -107,7 +107,7 @@ def test_jira_connector_basic(reset: None, jira_connector: JiraConnector) -> Non
     assert epic.metadata == {
         "priority": "Medium",
         "status": "Backlog",
-        "reporter": "Founder Onyx",
+        "reporter": "Founder Gen.Ai",
         "assignee": "Chris Weaver",
         "issuetype": "Epic",
         "created": "2025-04-16T16:55:53.068-0700",

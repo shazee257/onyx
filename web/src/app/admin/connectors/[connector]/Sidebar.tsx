@@ -85,7 +85,7 @@ export default function Sidebar() {
               {enterpriseSettings && enterpriseSettings.application_name ? (
                 <HeaderTitle>{enterpriseSettings.application_name}</HeaderTitle>
               ) : (
-                <HeaderTitle>Onyx</HeaderTitle>
+                <HeaderTitle>Gen.Ai</HeaderTitle>
               )}
             </div>
           </div>
@@ -107,9 +107,8 @@ export default function Sidebar() {
                   return (
                     <div
                       key={index}
-                      className={`flex items-center mb-6 relative ${
-                        !allowed ? "cursor-not-allowed" : "cursor-pointer"
-                      }`}
+                      className={`flex items-center mb-6 relative ${!allowed ? "cursor-not-allowed" : "cursor-pointer"
+                        }`}
                       onClick={() => {
                         if (allowed) {
                           setFormStep(index - (noCredential ? 1 : 0));
@@ -118,9 +117,8 @@ export default function Sidebar() {
                     >
                       <div className="flex-shrink-0 mr-4 z-10">
                         <div
-                          className={`rounded-full h-3.5 w-3.5 flex items-center justify-center ${
-                            allowed ? "bg-blue-500" : "bg-background-300"
-                          }`}
+                          className={`rounded-full h-3.5 w-3.5 flex items-center justify-center ${allowed ? "bg-blue-500" : "bg-background-300"
+                            }`}
                         >
                           {formStep === index && (
                             <div className="h-2 w-2 rounded-full bg-white"></div>
@@ -128,9 +126,8 @@ export default function Sidebar() {
                         </div>
                       </div>
                       <div
-                        className={`${
-                          index <= formStep ? "text-text-800" : "text-text-500"
-                        }`}
+                        className={`${index <= formStep ? "text-text-800" : "text-text-500"
+                          }`}
                       >
                         {step}
                       </div>

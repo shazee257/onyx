@@ -328,7 +328,7 @@ def _convert_driveitem_to_document_with_permissions(
         image_section.link = driveitem.web_url
         sections.append(image_section)
     else:
-        # Note: we don't process Onyx metadata for connectors like Drive & Sharepoint, but could
+        # Note: we don't process Gen.Ai metadata for connectors like Drive & Sharepoint, but could
         extraction_result = extract_text_and_images(
             file=io.BytesIO(content_bytes), file_name=driveitem.name
         )

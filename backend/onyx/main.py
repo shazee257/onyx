@@ -308,7 +308,7 @@ def log_http_error(request: Request, exc: Exception) -> JSONResponse:
 
 def get_application(lifespan_override: Lifespan | None = None) -> FastAPI:
     application = FastAPI(
-        title="Onyx Backend",
+        title="Gen.Ai Backend",
         version=__version__,
         lifespan=lifespan_override or lifespan,
     )
@@ -490,7 +490,7 @@ app = fetch_versioned_implementation(module="onyx.main", attribute="get_applicat
 
 if __name__ == "__main__":
     logger.notice(
-        f"Starting Onyx Backend version {__version__} on http://{APP_HOST}:{str(APP_PORT)}/"
+        f"Starting Gen.Ai Backend version {__version__} on http://{APP_HOST}:{str(APP_PORT)}/"
     )
 
     if global_version.is_ee_version():

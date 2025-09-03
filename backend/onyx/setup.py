@@ -70,7 +70,7 @@ def setup_onyx(
     db_session: Session, tenant_id: str, cohere_enabled: bool = False
 ) -> None:
     """
-    Setup Onyx for a particular tenant. In the Single Tenant case, it will set it up for the default schema
+    Setup Gen.Ai for a particular tenant. In the Single Tenant case, it will set it up for the default schema
     on server startup. In the MT case, it will be called when the tenant is created.
 
     The Tenant Service calls the tenants/create endpoint which runs this.

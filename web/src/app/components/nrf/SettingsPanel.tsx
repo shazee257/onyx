@@ -115,7 +115,7 @@ export const SettingsPanel = ({
         <SidebarSwitch
           checked={useOnyxAsNewTab}
           onCheckedChange={handleUseOnyxToggle}
-          label="Use Onyx as new tab page"
+          label="Use Gen.Ai as new tab page"
         />
 
         <SidebarSwitch
@@ -153,9 +153,8 @@ export const SettingsPanel = ({
               <div
                 key={bg}
                 onClick={() => updateBackgroundUrl(bg)}
-                className={`relative ${
-                  index === 0 ? "col-span-2 row-span-2" : ""
-                } cursor-pointer rounded-sm overflow-hidden`}
+                className={`relative ${index === 0 ? "col-span-2 row-span-2" : ""
+                  } cursor-pointer rounded-sm overflow-hidden`}
                 style={{
                   paddingBottom: index === 0 ? "100%" : "50%",
                 }}
@@ -167,8 +166,8 @@ export const SettingsPanel = ({
                 {(theme === "light"
                   ? defaultLightBackgroundUrl
                   : defaultDarkBackgroundUrl) === bg && (
-                  <div className="absolute inset-0 border-2 border-blue-400 rounded" />
-                )}
+                    <div className="absolute inset-0 border-2 border-blue-400 rounded" />
+                  )}
               </div>
             )
           )}

@@ -191,12 +191,12 @@ def main() -> None:
         "--url",
         type=str,
         default="http://localhost:3000/api",
-        help="Onyx URL",
+        help="Gen.Ai URL",
     )
     parser.add_argument(
         "--api-key",
         type=str,
-        help="Onyx Basic/Admin Level API key",
+        help="Gen.Ai Basic/Admin Level API key",
     )
     parser.add_argument(
         "--concurrent",

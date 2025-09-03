@@ -95,7 +95,7 @@ def _get_access_for_documents(
         )
 
         # If the document is determined to be "public" externally (through a SYNC connector)
-        # then it's given the same access level as if it were marked public within Onyx
+        # then it's given the same access level as if it were marked public within Gen.Ai
         # If its censored, then it's public anywhere during the search and then permissions are
         # applied after the search
         is_public_anywhere = (

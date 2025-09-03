@@ -133,20 +133,20 @@ export const GmailMain = () => {
   const gmailPublicUploadedCredential:
     | Credential<GmailCredentialJson>
     | undefined = credentialsData.find(
-    (credential) =>
-      credential.credential_json?.google_tokens &&
-      credential.admin_public &&
-      credential.source === "gmail" &&
-      credential.credential_json.authentication_method !== "oauth_interactive"
-  );
+      (credential) =>
+        credential.credential_json?.google_tokens &&
+        credential.admin_public &&
+        credential.source === "gmail" &&
+        credential.credential_json.authentication_method !== "oauth_interactive"
+    );
 
   const gmailServiceAccountCredential:
     | Credential<GmailServiceAccountCredentialJson>
     | undefined = credentialsData.find(
-    (credential) =>
-      credential.credential_json?.google_service_account_key &&
-      credential.source === "gmail"
-  );
+      (credential) =>
+        credential.credential_json?.google_service_account_key &&
+        credential.source === "gmail"
+    );
 
   const gmailConnectorIndexingStatuses: CCPairBasicInfo[] =
     connectorIndexingStatuses.filter(
@@ -180,7 +180,7 @@ export const GmailMain = () => {
       {isAdmin && hasUploadedCredentials && (
         <>
           <Title className="mb-2 mt-6 ml-auto mr-auto">
-            Step 2: Authenticate with Onyx
+            Step 2: Authenticate with Gen.Ai
           </Title>
           <GmailAuthSection
             setPopup={setPopup}

@@ -18,7 +18,7 @@ logger = setup_logger()
 
 
 class OnyxSlackWebClient(WebClient):
-    """Use in combination with the Onyx Retry Handler.
+    """Use in combination with the Gen.Ai Retry Handler.
 
     This client wrapper enforces a proper retry delay through redis BEFORE the api call
     so that multiple clients can synchronize and rate limit properly.

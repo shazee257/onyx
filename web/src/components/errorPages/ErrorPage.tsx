@@ -10,7 +10,7 @@ export default function Error() {
       </h1>
       <div className="space-y-4 text-gray-600 dark:text-gray-300">
         <p>
-          It seems there was a problem loading your Onyx settings. This could be
+          It seems there was a problem loading your Gen.Ai settings. This could be
           due to a configuration issue or incomplete setup.
         </p>
         <p>

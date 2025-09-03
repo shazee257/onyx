@@ -30,7 +30,7 @@
     "path": "documents/sets",
     "pageTitle": "Document Sets",
     "options": {
-      "paragraphText": "Document Sets allow you to group logically connected documents into a single bundle. These can then be used as a filter when performing searches to control the scope of information Onyx searches over."
+      "paragraphText": "Document Sets allow you to group logically connected documents into a single bundle. These can then be used as a filter when performing searches to control the scope of information Gen.Ai searches over."
     }
   },
   {
@@ -38,7 +38,7 @@
     "path": "bots",
     "pageTitle": "Slack Bots",
     "options": {
-      "paragraphText": "Setup Slack bots that connect to Onyx. Once setup, you will be able to ask questions to Onyx directly from Slack. Additionally, you can:"
+      "paragraphText": "Setup Slack bots that connect to Gen.Ai. Once setup, you will be able to ask questions to Gen.Ai directly from Slack. Additionally, you can:"
     }
   },
   {

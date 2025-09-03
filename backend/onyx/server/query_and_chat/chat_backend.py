@@ -271,7 +271,7 @@ def get_chat_session(
         shared_status=chat_session.shared_status,
         current_temperature_override=chat_session.temperature_override,
         deleted=chat_session.deleted,
-        # specifically for the Onyx Chat UI
+        # specifically for the Gen.Ai Chat UI
         packets=simplified_packet_lists,
     )
 

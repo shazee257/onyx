@@ -3,7 +3,7 @@ from onyx.configs.constants import DocumentSource
 
 def prefix_user_email(user_email: str) -> str:
     """Prefixes a user email to eliminate collision with group names.
-    This applies to both a Onyx user and an External user, this is to make the query time
+    This applies to both a Gen.Ai user and an External user, this is to make the query time
     more efficient"""
     return f"user_email:{user_email}"
 
@@ -15,7 +15,7 @@ def prefix_user_group(user_group_name: str) -> str:
 
 
 def prefix_external_group(ext_group_name: str) -> str:
-    """Prefixes an external group name to eliminate collision with user emails / Onyx groups."""
+    """Prefixes an external group name to eliminate collision with user emails / Gen.Ai groups."""
     return f"external_group:{ext_group_name}"
 
 

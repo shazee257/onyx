@@ -205,7 +205,7 @@ def read_text_file(
     ignore_onyx_metadata: bool = True,
 ) -> tuple[str, dict]:
     """
-    For plain text files. Optionally extracts Onyx metadata from the first line.
+    For plain text files. Optionally extracts Gen.Ai metadata from the first line.
     """
     metadata = {}
     file_content_raw = ""

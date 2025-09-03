@@ -140,7 +140,7 @@ def optional_telemetry(
         )
         thread.start()
     except Exception:
-        # Should never interfere with normal functions of Onyx
+        # Should never interfere with normal functions of Gen.Ai
         pass
 
 
@@ -153,8 +153,8 @@ def mt_cloud_telemetry(
         return
 
     # MIT version should not need to include any Posthog code
-    # This is only for Onyx MT Cloud, this code should also never be hit, no reason for any orgs to
-    # be running the Multi Tenant version of Onyx.
+    # This is only for Gen.Ai MT Cloud, this code should also never be hit, no reason for any orgs to
+    # be running the Multi Tenant version of Gen.Ai.
     fetch_versioned_implementation_with_fallback(
         module="onyx.utils.telemetry",
         attribute="event_telemetry",

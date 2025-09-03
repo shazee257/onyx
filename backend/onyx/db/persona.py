@@ -210,7 +210,7 @@ def make_persona_private(
 
     # May cause error if someone switches down to MIT from EE
     if group_ids:
-        raise NotImplementedError("Onyx MIT does not support private Personas")
+        raise NotImplementedError("Gen.Ai MIT does not support private Personas")
 
 
 def create_update_persona(
@@ -761,7 +761,7 @@ def validate_persona_tools(tools: list[Tool]) -> None:
     for tool in tools:
         if tool.in_code_tool_id == "InternetSearchTool" and not EXA_API_KEY:
             raise ValueError(
-                "Internet Search API key not found, please contact your Onyx admin to get it added!"
+                "Internet Search API key not found, please contact your Gen.Ai admin to get it added!"
             )
 
 

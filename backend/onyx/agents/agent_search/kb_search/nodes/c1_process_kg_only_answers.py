@@ -27,7 +27,7 @@ def _get_formated_source_reference_results(
     if source_document_results is None:
         return None
 
-    # get all entities that correspond to an Onyx document
+    # get all entities that correspond to an Gen.Ai document
     document_ids = source_document_results
 
     with get_session_with_current_tenant() as session:

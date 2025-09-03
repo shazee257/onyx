@@ -152,7 +152,7 @@ class LoopioConnector(LoadConnector, PollConnector):
                     else None
                 )
 
-                # For Onyx, we decay document score overtime, either last_updated or
+                # For Gen.Ai, we decay document score overtime, either last_updated or
                 # last_reviewed is a good enough signal for the document's recency
                 latest_time = (
                     max(last_reviewed, last_updated) if last_reviewed else last_updated

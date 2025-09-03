@@ -178,9 +178,8 @@ function KGConfiguration({
               />
             </div>
             <div
-              className={`flex flex-col gap-y-6 ${
-                props.values.enabled ? "" : "opacity-50"
-              }`}
+              className={`flex flex-col gap-y-6 ${props.values.enabled ? "" : "opacity-50"
+                }`}
             >
               <TextFormField
                 name="vendor"
@@ -265,7 +264,7 @@ function Main() {
             </div>
             <p>
               (To use Knowledge Graph queries, you&apos;ll need a dedicated
-              Assistant configured in a specific way. Please contact the Onyx
+              Assistant configured in a specific way. Please contact the Gen.Ai
               team for setup instructions.)
             </p>
           </div>

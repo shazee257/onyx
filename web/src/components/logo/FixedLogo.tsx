@@ -27,7 +27,7 @@ export const LogoComponent = memo(function LogoComponent({
 
   return (
     <div
-      onClick={isAdmin ? () => router.push("/chat") : () => {}}
+      onClick={isAdmin ? () => router.push("/chat") : () => { }}
       className={`max-w-[200px]
         ${!show && "mobile:hidden"}
        flex text-text-900 items-center gap-x-1`}
@@ -43,7 +43,7 @@ export const LogoComponent = memo(function LogoComponent({
             </HeaderTitle>
             {!NEXT_PUBLIC_DO_NOT_USE_TOGGLE_OFF_DANSWER_POWERED && (
               <p className="text-xs text-left text-subtle whitespace-nowrap overflow-hidden text-ellipsis">
-                Powered by Onyx
+                Powered by Gen.Ai
               </p>
             )}
           </div>
@@ -76,11 +76,10 @@ export default function FixedLogo({
       </Link>
       <div className="mobile:hidden fixed left-4 bottom-4">
         <FiSidebar
-          className={`${
-            backgroundToggled
-              ? "text-text-mobile-sidebar-toggled"
-              : "text-text-mobile-sidebar-untoggled"
-          }`}
+          className={`${backgroundToggled
+            ? "text-text-mobile-sidebar-toggled"
+            : "text-text-mobile-sidebar-untoggled"
+            }`}
         />
       </div>
     </>

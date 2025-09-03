@@ -107,7 +107,7 @@ async def lifespan(app: FastAPI) -> AsyncGenerator:
 
 def get_model_app() -> FastAPI:
     application = FastAPI(
-        title="Onyx Model Server", version=__version__, lifespan=lifespan
+        title="Gen.Ai Model Server", version=__version__, lifespan=lifespan
     )
     if SENTRY_DSN:
         sentry_sdk.init(
@@ -141,7 +141,7 @@ app = get_model_app()
 
 if __name__ == "__main__":
     logger.notice(
-        f"Starting Onyx Model Server on http://{MODEL_SERVER_ALLOWED_HOST}:{str(MODEL_SERVER_PORT)}/"
+        f"Starting Gen.Ai Model Server on http://{MODEL_SERVER_ALLOWED_HOST}:{str(MODEL_SERVER_PORT)}/"
     )
     logger.notice(f"Model Server Version: {__version__}")
     uvicorn.run(app, host=MODEL_SERVER_ALLOWED_HOST, port=MODEL_SERVER_PORT)

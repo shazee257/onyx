@@ -1,8 +1,8 @@
 FROM python:3.11.7-slim-bookworm
 
 LABEL com.danswer.maintainer="founders@onyx.app"
-LABEL com.danswer.description="This image is for the Onyx model server which runs all of the \
-AI models for Onyx. This container and all the code is MIT Licensed and free for all to use. \
+LABEL com.danswer.description="This image is for the Gen.Ai model server which runs all of the \
+AI models for Gen.Ai. This container and all the code is MIT Licensed and free for all to use. \
 You can find it at https://hub.docker.com/r/onyx/onyx-model-server. For more details, \
 visit https://github.com/onyx-dot-app/onyx."
 
@@ -33,7 +33,7 @@ RUN apt-get remove -y --allow-remove-essential perl-base && \
     apt-get autoremove -y
 
 # Pre-downloading models for setups with limited egress
-# Download tokenizers, distilbert for the Onyx model
+# Download tokenizers, distilbert for the Gen.Ai model
 # Download model weights
 # Run Nomic to pull in the custom architecture and have it cached locally
 RUN python -c "from transformers import AutoTokenizer; \
@@ -48,7 +48,7 @@ from sentence_transformers import SentenceTransformer; \
 SentenceTransformer(model_name_or_path='nomic-ai/nomic-embed-text-v1', trust_remote_code=True);"
 
 # In case the user has volumes mounted to /app/.cache/huggingface that they've downloaded while
-# running Onyx, move the current contents of the cache folder to a temporary location to ensure 
+# running Gen.Ai, move the current contents of the cache folder to a temporary location to ensure 
 # it's preserved in order to combine with the user's cache contents
 RUN mv /app/.cache/huggingface /app/.cache/temp_huggingface && \
     chown -R onyx:onyx /app
@@ -62,7 +62,7 @@ COPY ./onyx/utils/middleware.py /app/onyx/utils/middleware.py
 # Place to fetch version information
 COPY ./onyx/__init__.py /app/onyx/__init__.py
 
-# Shared between Onyx Backend and Model Server
+# Shared between Gen.Ai Backend and Model Server
 COPY ./shared_configs /app/shared_configs
 
 # Model Server main code

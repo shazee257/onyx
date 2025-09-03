@@ -186,19 +186,17 @@ const AssistantCard: React.FC<{
                     </button>
                   </PopoverTrigger>
                   <PopoverContent
-                    className={`${
-                      isDeleteConfirmation ? "w-64" : "w-32"
-                    } z-[10000] p-2`}
+                    className={`${isDeleteConfirmation ? "w-64" : "w-32"
+                      } z-[10000] p-2`}
                   >
                     {!isDeleteConfirmation ? (
                       <div className="flex flex-col text-sm space-y-1">
                         <button
                           onClick={isOwnedByUser ? handleEdit : undefined}
-                          className={`w-full flex items-center text-left px-2 py-1 rounded ${
-                            isOwnedByUser
-                              ? "hover:bg-neutral-200 dark:hover:bg-neutral-700"
-                              : "opacity-50 cursor-not-allowed"
-                          }`}
+                          className={`w-full flex items-center text-left px-2 py-1 rounded ${isOwnedByUser
+                            ? "hover:bg-neutral-200 dark:hover:bg-neutral-700"
+                            : "opacity-50 cursor-not-allowed"
+                            }`}
                           disabled={!isOwnedByUser}
                         >
                           <FiEdit size={12} className="inline mr-2" />
@@ -209,18 +207,17 @@ const AssistantCard: React.FC<{
                             onClick={
                               isOwnedByUser
                                 ? () => {
-                                    router.push(
-                                      `/assistants/stats/${persona.id}`
-                                    );
-                                    closePopover();
-                                  }
+                                  router.push(
+                                    `/assistants/stats/${persona.id}`
+                                  );
+                                  closePopover();
+                                }
                                 : undefined
                             }
-                            className={`w-full text-left items-center px-2 py-1 rounded ${
-                              isOwnedByUser
-                                ? "hover:bg-neutral-200 dark:hover:bg-neutral-800"
-                                : "opacity-50 cursor-not-allowed"
-                            }`}
+                            className={`w-full text-left items-center px-2 py-1 rounded ${isOwnedByUser
+                              ? "hover:bg-neutral-200 dark:hover:bg-neutral-800"
+                              : "opacity-50 cursor-not-allowed"
+                              }`}
                           >
                             <FiBarChart size={12} className="inline mr-2" />
                             Stats
@@ -228,11 +225,10 @@ const AssistantCard: React.FC<{
                         )}
                         <button
                           onClick={isOwnedByUser ? handleDelete : undefined}
-                          className={`w-full text-left items-center px-2 py-1 rounded ${
-                            isOwnedByUser
-                              ? "hover:bg-neutral-200 dark:hover:bg-neutral- text-red-600 dark:text-red-400"
-                              : "opacity-50 cursor-not-allowed text-red-300 dark:text-red-500"
-                          }`}
+                          className={`w-full text-left items-center px-2 py-1 rounded ${isOwnedByUser
+                            ? "hover:bg-neutral-200 dark:hover:bg-neutral- text-red-600 dark:text-red-400"
+                            : "opacity-50 cursor-not-allowed text-red-300 dark:text-red-500"
+                            }`}
                           disabled={!isOwnedByUser}
                         >
                           <FiTrash size={12} className="inline mr-2" />
@@ -279,7 +275,7 @@ const AssistantCard: React.FC<{
                 {persona.owner?.email || persona.builtin_persona ? (
                   <>
                     <span className="truncate">
-                      By {persona.owner?.email || "Onyx"}
+                      By {persona.owner?.email || "Gen.Ai"}
                     </span>
 
                     <span className="mx-2">•</span>

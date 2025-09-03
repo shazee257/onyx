@@ -257,7 +257,7 @@ def _get_or_register_oauth_client(
             registration_request = {
                 "application_type": "web",
                 "redirect_uris": [redirect_uri],
-                "client_name": f"Onyx MCP Client for {mcp_server.name}",
+                "client_name": f"Gen.Ai MCP Client for {mcp_server.name}",
                 "grant_types": ["authorization_code", "refresh_token"],
                 "response_types": ["code"],
                 "scope": os.getenv("MCP_OAUTH_SCOPE", "mcp:use"),

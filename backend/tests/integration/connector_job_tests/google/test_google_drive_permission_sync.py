@@ -67,7 +67,7 @@ def google_drive_test_env_setup() -> Generator[
             drive_service, admin_user.email, test_id
         )
 
-        # Setup Onyx infrastructure
+        # Setup Gen.Ai infrastructure
         LLMProviderManager.create(user_performing_action=admin_user)
 
         before = datetime.now(timezone.utc)

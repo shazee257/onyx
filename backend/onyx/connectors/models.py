@@ -155,7 +155,7 @@ class BasicExpertInfo(BaseModel):
 
 
 class DocumentBase(BaseModel):
-    """Used for Onyx ingestion api, the ID is inferred before use if not provided"""
+    """Used for Gen.Ai ingestion api, the ID is inferred before use if not provided"""
 
     id: str | None = None
     sections: list[TextSection | ImageSection]
@@ -241,7 +241,7 @@ class DocumentBase(BaseModel):
 
 
 class Document(DocumentBase):
-    """Used for Onyx ingestion api, the ID is required"""
+    """Used for Gen.Ai ingestion api, the ID is required"""
 
     id: str
     source: DocumentSource

@@ -66,7 +66,7 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     steps after."""
 
     async with lifespan_base(app):
-        # seed the Onyx environment with LLMs, Assistants, etc. based on an optional
+        # seed the Gen.Ai environment with LLMs, Assistants, etc. based on an optional
         # environment variable. Used to automate deployment for multiple environments.
         seed_db()
 

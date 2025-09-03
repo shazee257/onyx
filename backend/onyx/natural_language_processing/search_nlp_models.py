@@ -94,7 +94,7 @@ _AUTH_ERROR_PERMISSION = "permission"
 
 
 WARM_UP_STRINGS = [
-    "Onyx is amazing!",
+    "Gen.Ai is amazing!",
     "Check out our easy deployment guide at",
     "https://docs.onyx.app/quickstart",
 ]
@@ -220,7 +220,7 @@ class CloudEmbedding:
 
         final_embeddings: list[Embedding] = []
         for text_batch in batch_list(texts, _COHERE_MAX_INPUT_LEN):
-            # Does not use the same tokenizer as the Onyx API server but it's approximately the same
+            # Does not use the same tokenizer as the Gen.Ai API server but it's approximately the same
             # empirically it's only off by a very few tokens so it's not a big deal
             response = await client.embed(
                 texts=text_batch,
@@ -617,10 +617,10 @@ class EmbeddingModel:
         def _make_request() -> Response:
             headers = {}
             if tenant_id:
-                headers["X-Onyx-Tenant-ID"] = tenant_id
+                headers["X-Gen.Ai-Tenant-ID"] = tenant_id
 
             if request_id:
-                headers["X-Onyx-Request-ID"] = request_id
+                headers["X-Gen.Ai-Request-ID"] = request_id
 
             response = requests.post(
                 endpoint,

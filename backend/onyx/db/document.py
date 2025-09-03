@@ -325,7 +325,7 @@ def get_access_info_for_documents(
     of the associated cc pairs are intending to make the document globally public.
     Returns the list where each element contains:
     - Document ID (which is also the ID of the DocumentByConnectorCredentialPair)
-    - List of emails of Onyx users with direct access to the doc (includes a "None" element if
+    - List of emails of Gen.Ai users with direct access to the doc (includes a "None" element if
       the connector was set up by an admin when auth was off
     - bool for whether the document is public (the document later can also be marked public by
       automatic permission sync step)

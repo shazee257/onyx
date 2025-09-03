@@ -194,7 +194,7 @@ async def saml_login_callback(
 
     upsert_saml_account(user_id=user.id, cookie=saved_cookie, db_session=db_session)
 
-    # Redirect to main Onyx search page
+    # Redirect to main Gen.Ai search page
     response = Response(status_code=status.HTTP_204_NO_CONTENT)
 
     response.set_cookie(

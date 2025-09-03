@@ -1,6 +1,6 @@
-# Onyx AWS ECS Fargate CloudFormation Deployment
+# Gen.Ai AWS ECS Fargate CloudFormation Deployment
 
-This directory contains CloudFormation templates and scripts to deploy Onyx on AWS ECS Fargate.
+This directory contains CloudFormation templates and scripts to deploy Gen.Ai on AWS ECS Fargate.
 
 ## Configuration
 
@@ -24,12 +24,12 @@ Example:
 ### Required Parameters
 
 - `Environment`: Used to prefix all stack names during deployment. This is required.
-- `OnyxNamespace`: Namespace for the Onyx deployment.
+- `OnyxNamespace`: Namespace for the Gen.Ai deployment.
 - `EFSName`: Name for the Elastic File System.
 - `AWSRegion`: AWS region where resources will be deployed.
-- `VpcID`: ID of the VPC where Onyx will be deployed.
+- `VpcID`: ID of the VPC where Gen.Ai will be deployed.
 - `SubnetIDs`: Comma-separated list of subnet IDs for deployment.
-- `DomainName`: Domain name for the Onyx deployment.
+- `DomainName`: Domain name for the Gen.Ai deployment.
 - `ValidationMethod`: Method for domain validation (typically "DNS").
 - [optional] `HostedZoneId`: Route 53 hosted zone ID (only if using Route 53 for DNS).
 

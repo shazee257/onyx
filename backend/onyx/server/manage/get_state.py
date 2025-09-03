@@ -42,11 +42,11 @@ def get_version() -> VersionResponse:
 @router.get("/versions")
 def get_versions() -> AllVersions:
     """
-    Fetches the latest stable and beta versions of Onyx Docker images.
+    Fetches the latest stable and beta versions of Gen.Ai Docker images.
     Since DockerHub does not explicitly flag stable and beta images,
     this endpoint can be used to programmatically check for new images.
     """
-    # Fetch the latest tags from DockerHub for each Onyx component
+    # Fetch the latest tags from DockerHub for each Gen.Ai component
     dockerhub_repos = [
         "onyxdotapp/onyx-model-server",
         "onyxdotapp/onyx-backend",

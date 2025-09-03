@@ -24,7 +24,7 @@ class NavigationItem(BaseModel):
 
 
 class EnterpriseSettings(BaseModel):
-    """General settings that only apply to the Enterprise Edition of Onyx
+    """General settings that only apply to the Enterprise Edition of Gen.Ai
 
     NOTE: don't put anything sensitive in here, as this is accessible without auth."""
 

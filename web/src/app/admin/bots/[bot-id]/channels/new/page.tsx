@@ -57,7 +57,7 @@ async function NewChannelConfigPage(props: {
       <BackButton />
       <AdminPageTitle
         icon={<SourceIcon iconSize={32} sourceType={ValidSources.Slack} />}
-        title="Configure OnyxBot for Slack Channel"
+        title="Configure Gen.Ai for Slack Channel"
       />
 
       <SlackChannelConfigCreationForm

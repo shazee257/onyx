@@ -43,8 +43,8 @@ export const SlackChannelConfigCreationForm = ({
     : false;
   const existingPersonaHasSearchTool = existingSlackChannelConfig?.persona
     ? existingSlackChannelConfig.persona.tools.some(
-        (tool) => tool.in_code_tool_id === SEARCH_TOOL_ID
-      )
+      (tool) => tool.in_code_tool_id === SEARCH_TOOL_ID
+    )
     : false;
 
   const [searchEnabledAssistants, nonSearchAssistants] = useMemo(() => {
@@ -105,12 +105,12 @@ export const SlackChannelConfigCreationForm = ({
           document_sets:
             existingSlackChannelConfig && existingSlackChannelConfig.persona
               ? existingSlackChannelConfig.persona.document_sets.map(
-                  (documentSet) => documentSet.id
-                )
+                (documentSet) => documentSet.id
+              )
               : ([] as number[]),
           persona_id:
             existingSlackChannelConfig?.persona &&
-            !isPersonaASlackBotPersona(existingSlackChannelConfig.persona)
+              !isPersonaASlackBotPersona(existingSlackChannelConfig.persona)
               ? existingSlackChannelConfig.persona.id
               : null,
           standard_answer_categories:
@@ -190,7 +190,7 @@ export const SlackChannelConfigCreationForm = ({
                 : [],
             persona_id:
               values.knowledge_source === "assistant" ||
-              values.knowledge_source === "non_search_assistant"
+                values.knowledge_source === "non_search_assistant"
                 ? values.persona_id
                 : null,
             standard_answer_categories: values.standard_answer_categories.map(
@@ -210,9 +210,9 @@ export const SlackChannelConfigCreationForm = ({
 
           const response = isUpdate
             ? await updateSlackChannelConfig(
-                existingSlackChannelConfig!.id,
-                cleanedValues
-              )
+              existingSlackChannelConfig!.id,
+              cleanedValues
+            )
             : await createSlackChannelConfig(cleanedValues);
 
           formikHelpers.setSubmitting(false);
@@ -222,9 +222,8 @@ export const SlackChannelConfigCreationForm = ({
             const responseJson = await response.json();
             const errorMsg = responseJson.detail || responseJson.message;
             setPopup({
-              message: `Error ${
-                isUpdate ? "updating" : "creating"
-              } OnyxBot config - ${errorMsg}`,
+              message: `Error ${isUpdate ? "updating" : "creating"
+                } Gen.Ai config - ${errorMsg}`,
               type: "error",
             });
           }

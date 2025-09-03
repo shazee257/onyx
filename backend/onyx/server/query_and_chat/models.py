@@ -39,7 +39,7 @@ class TagResponse(BaseModel):
 
 
 class UpdateChatSessionThreadRequest(BaseModel):
-    # If not specified, use Onyx default persona
+    # If not specified, use Gen.Ai default persona
     chat_session_id: UUID
     new_alternate_model: str
 
@@ -50,7 +50,7 @@ class UpdateChatSessionTemperatureRequest(BaseModel):
 
 
 class ChatSessionCreationRequest(BaseModel):
-    # If not specified, use Onyx default persona
+    # If not specified, use Gen.Ai default persona
     persona_id: int = 0
     description: str | None = None
 

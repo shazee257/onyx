@@ -376,7 +376,7 @@ def delete_user_token_from_redis(
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Onyx Redis Manager")
+    parser = argparse.ArgumentParser(description="Gen.Ai Redis Manager")
     parser.add_argument(
         "--command",
         type=OnyxRedisCommand,

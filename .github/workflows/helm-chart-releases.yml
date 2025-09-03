@@ -1,4 +1,4 @@
-name: Release Onyx Helm Charts
+name: Release Gen.Ai Helm Charts
 
 on:
   push:

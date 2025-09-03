@@ -77,7 +77,7 @@ def _get_entities(
 
         # Axero limitations:
         # No next page token, can paginate but things may have changed
-        # for example, a doc that hasn't been read in by Onyx is updated and is now front of the list
+        # for example, a doc that hasn't been read in by Gen.Ai is updated and is now front of the list
         # due to this limitation and the fact that Axero has no rate limiting but API calls can cause
         # increased latency for the team, we have to just fetch all the pages quickly to reduce the
         # chance of missing a document due to an update (it will still get updated next pass)

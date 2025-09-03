@@ -1,8 +1,8 @@
 <!-- ONYX_METADATA={"link": "https://github.com/onyx-dot-app/onyx/blob/main/deployment/README.md"} -->
 
-# Deploying Onyx
+# Deploying Gen.Ai
 
-The two options provided here are the easiest ways to get Onyx up and running.
+The two options provided here are the easiest ways to get Gen.Ai up and running.
 
 - Docker Compose is simpler and default values are already preset to run right out of the box with a single command.
   As everything is running on a single machine, this may not be as scalable depending on your hardware, traffic and needs.
@@ -16,19 +16,19 @@ The two options provided here are the easiest ways to get Onyx up and running.
     deployments or services according to your setup. This may require existing Kubernetes knowledge or additional
     setup time.
 
-All the features of Onyx are fully available regardless of the deployment option.
+All the features of Gen.Ai are fully available regardless of the deployment option.
 
 For information on setting up connectors, check out https://docs.onyx.app/connectors/overview
 
 ## Docker Compose:
 
-Docker Compose provides the easiest way to get Onyx up and running.
+Docker Compose provides the easiest way to get Gen.Ai up and running.
 
 Requirements: Docker and docker compose
 
 This section is for getting started quickly without setting up GPUs. For deployments to leverage GPU, please refer to [this](https://github.com/onyx-dot-app/onyx/blob/main/deployment/docker_compose/README.md) documentation.
 
-1. To run Onyx, navigate to `docker_compose` directory and run the following:
+1. To run Gen.Ai, navigate to `docker_compose` directory and run the following:
 
    - `docker compose -f docker-compose.dev.yml -p onyx-stack up -d --pull always --force-recreate` - or run: `docker compose -f docker-compose.dev.yml -p onyx-stack up -d --build --force-recreate`
      to build from source
@@ -39,7 +39,7 @@ This section is for getting started quickly without setting up GPUs. For deploym
    - To stop the containers: `docker compose -f docker-compose.dev.yml -p onyx-stack stop`
    - To delete the containers: `docker compose -f docker-compose.dev.yml -p onyx-stack down`
 
-3. To completely remove Onyx run:
+3. To completely remove Gen.Ai run:
    - **WARNING, this will also erase your indexed data and users**
    - `docker compose -f docker-compose.dev.yml -p onyx-stack down -v`
 

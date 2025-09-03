@@ -1,8 +1,8 @@
 <!-- ONYX_METADATA={"link": "https://github.com/onyx-dot-app/onyx/blob/main/backend/onyx/connectors/README.md"} -->
 
-# Writing a new Onyx Connector
+# Writing a new Gen.Ai Connector
 
-This README covers how to contribute a new Connector for Onyx. It includes an overview of the design, interfaces,
+This README covers how to contribute a new Connector for Gen.Ai. It includes an overview of the design, interfaces,
 and required changes.
 
 Thank you for your contribution!
@@ -93,7 +93,7 @@ if __name__ == "__main__":
 #### Docs Changes
 
 Create the new connector page (with guiding images!) with how to get the connector credentials and how to set up the
-connector in Onyx. Then create a Pull Request in https://github.com/onyx-dot-app/onyx-docs.
+connector in Gen.Ai. Then create a Pull Request in https://github.com/onyx-dot-app/onyx-docs.
 
 ### Before opening PR
 

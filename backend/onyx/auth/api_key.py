@@ -18,7 +18,7 @@ _API_KEY_HEADER_NAME = "Authorization"
 # to non-standard, experimental, or custom headers in HTTP or other protocols. It
 # indicates that the header is not part of the official standards defined by
 # organizations like the Internet Engineering Task Force (IETF).
-_API_KEY_HEADER_ALTERNATIVE_NAME = "X-Onyx-Authorization"
+_API_KEY_HEADER_ALTERNATIVE_NAME = "X-Gen.Ai-Authorization"
 _BEARER_PREFIX = "Bearer "
 _API_KEY_PREFIX = "on_"
 _DEPRECATED_API_KEY_PREFIX = "dn_"

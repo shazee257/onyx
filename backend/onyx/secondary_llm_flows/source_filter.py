@@ -148,7 +148,7 @@ def extract_source_filter(
             },
             {
                 "role": "user",
-                "content": "What page from Onyx contains debugging instruction on segfault",
+                "content": "What page from Gen.Ai contains debugging instruction on segfault",
             },
             {
                 "role": "assistant",

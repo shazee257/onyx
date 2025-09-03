@@ -552,7 +552,7 @@ class Document(Base):
     # NOTE: if more sensitive data is added here for display, make sure to add user/group permission
 
     # this should correspond to the ID of the document
-    # (as is passed around in Onyx)
+    # (as is passed around in Gen.Ai)
     id: Mapped[str] = mapped_column(NullFilteredString, primary_key=True)
     from_ingestion_api: Mapped[bool] = mapped_column(
         Boolean, default=False, nullable=True
@@ -589,7 +589,7 @@ class Document(Base):
         DateTime(timezone=True), nullable=True, index=True
     )
     # The following are not attached to User because the account/email may not be known
-    # within Onyx
+    # within Gen.Ai
     # Something like the document creator
     primary_owners: Mapped[list[str] | None] = mapped_column(
         postgresql.ARRAY(String), nullable=True
@@ -1256,7 +1256,7 @@ class ChunkStats(Base):
     # NOTE: if more sensitive data is added here for display, make sure to add user/group permission
 
     # this should correspond to the ID of the document
-    # (as is passed around in Onyx)x
+    # (as is passed around in Gen.Ai)x
     id: Mapped[str] = mapped_column(
         NullFilteredString,
         primary_key=True,
@@ -2027,7 +2027,7 @@ class ChatSession(Base):
         ForeignKey("persona.id"), nullable=True
     )
     description: Mapped[str | None] = mapped_column(Text, nullable=True)
-    # This chat created by OnyxBot
+    # This chat created by Gen.Ai
     onyxbot_flow: Mapped[bool] = mapped_column(Boolean, default=False)
     # Only ever set to True if system is set to not hard-delete chats
     deleted: Mapped[bool] = mapped_column(Boolean, default=False)
@@ -2926,11 +2926,11 @@ class AgentSearchMetrics(Base):
 Enterprise Edition Models
 ************************************************************************
 
-These models are only used in Enterprise Edition only features in Onyx.
+These models are only used in Enterprise Edition only features in Gen.Ai.
 They are kept here to simplify the codebase and avoid having different assumptions
-on the shape of data being passed around between the MIT and EE versions of Onyx.
+on the shape of data being passed around between the MIT and EE versions of Gen.Ai.
 
-In the MIT version of Onyx, assume these tables are always empty.
+In the MIT version of Gen.Ai, assume these tables are always empty.
 """
 
 
@@ -3198,7 +3198,7 @@ class User__ExternalUserGroupId(Base):
     """Maps user info both internal and external to the name of the external group
     This maps the user to all of their external groups so that the external group name can be
     attached to the ACL list matching during query time. User level permissions can be handled by
-    directly adding the Onyx user to the doc ACL list"""
+    directly adding the Gen.Ai user to the doc ACL list"""
 
     __tablename__ = "user__external_user_group_id"
 

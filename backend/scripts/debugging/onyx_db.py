@@ -1,4 +1,4 @@
-"""Onyx Database tool"""
+"""Gen.Ai Database tool"""
 
 import os
 

@@ -12,9 +12,9 @@ class SlackMessageInfo(BaseModel):
     thread_to_respond: str | None
     sender_id: str | None
     email: str | None
-    bypass_filters: bool  # User has tagged @OnyxBot
-    is_slash_command: bool  # User is using /OnyxBot
-    is_bot_dm: bool  # User is direct messaging to OnyxBot
+    bypass_filters: bool  # User has tagged @Gen.Ai
+    is_slash_command: bool  # User is using /Gen.Ai
+    is_bot_dm: bool  # User is direct messaging to Gen.Ai
 
 
 # Models used to encode the relevant data for the ephemeral message actions

@@ -99,7 +99,7 @@ def check_message_limit() -> bool:
         _DANSWER_BOT_COUNT_START_TIME = time.time()
     if (_DANSWER_BOT_MESSAGE_COUNT + 1) > DANSWER_BOT_RESPONSE_LIMIT_PER_TIME_PERIOD:
         logger.error(
-            f"OnyxBot has reached the message limit {DANSWER_BOT_RESPONSE_LIMIT_PER_TIME_PERIOD}"
+            f"Gen.Ai has reached the message limit {DANSWER_BOT_RESPONSE_LIMIT_PER_TIME_PERIOD}"
             f" for the time period {DANSWER_BOT_RESPONSE_LIMIT_TIME_PERIOD_SECONDS} seconds."
             " These limits are configurable in backend/onyx/configs/onyxbot_configs.py"
         )
@@ -201,7 +201,7 @@ def _build_error_block(error_message: str) -> Block:
     the error without completely breaking
     """
     display_text = (
-        "There was an error displaying all of the Onyx answers."
+        "There was an error displaying all of the Gen.Ai answers."
         f" Please let an admin or an onyx developer know. Error: {error_message}"
     )
     return SectionBlock(text=display_text)
@@ -572,16 +572,16 @@ def read_slack_thread(
                 is_onyx_bot_response = True
 
             if is_onyx_bot_response:
-                # OnyxBot response
+                # Gen.Ai response
                 message_type = MessageType.ASSISTANT
                 user_sem_id = "Assistant"
 
-                # OnyxBot responses have both text and blocks
+                # Gen.Ai responses have both text and blocks
                 # The useful content is in the blocks, specifically the first block unless there are
                 # auto-detected filters
                 blocks = reply.get("blocks")
                 if not blocks:
-                    logger.warning(f"OnyxBot response has no blocks: {reply}")
+                    logger.warning(f"Gen.Ai response has no blocks: {reply}")
                     continue
 
                 message = blocks[0].get("text", {}).get("text")
@@ -592,11 +592,11 @@ def read_slack_thread(
                     if len(blocks) < 2:
                         logger.warning(f"Only filter blocks found: {reply}")
                         continue
-                    # This is the OnyxBot answer format, if there is a change to how we respond,
+                    # This is the Gen.Ai answer format, if there is a change to how we respond,
                     # this will need to be updated to get the correct "answer" portion
                     message = reply["blocks"][1].get("text", {}).get("text")
             else:
-                # Other bots are not counted as the LLM response which only comes from Onyx
+                # Other bots are not counted as the LLM response which only comes from Gen.Ai
                 message_type = MessageType.USER
                 bot_user_name = fetch_user_semantic_id_from_id(
                     reply.get("user"), client
@@ -639,7 +639,7 @@ def slack_usage_report(action: str, sender_id: str | None, client: WebClient) ->
     optional_telemetry(
         record_type=RecordType.USAGE,
         data={"action": action},
-        user_id=str(onyx_user.id) if onyx_user else "Non-Onyx-Or-No-Auth-User",
+        user_id=str(onyx_user.id) if onyx_user else "Non-Gen.Ai-Or-No-Auth-User",
     )
 
 

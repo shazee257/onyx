@@ -181,7 +181,7 @@ export function NewTeamModal() {
                   onClick={handleContinueToNewOrg}
                   className="flex w-full text-center items-center justify-center"
                 >
-                  Try Onyx while waiting
+                  Try Gen.Ai while waiting
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>

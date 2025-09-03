@@ -1,4 +1,4 @@
-// Get Onyx Web Version
+// Get Gen.Ai Web Version
 const { version: package_version } = require("./package.json"); // version from package.json
 const env_version = process.env.ONYX_VERSION; // version from env variable
 // Use env version if set & valid, otherwise default to package version
@@ -13,11 +13,10 @@ const cspHeader = `
     object-src 'none';
     base-uri 'self';
     form-action 'self';
-    ${
-      process.env.NEXT_PUBLIC_CLOUD_ENABLED === "true"
-        ? "upgrade-insecure-requests;"
-        : ""
-    }
+    ${process.env.NEXT_PUBLIC_CLOUD_ENABLED === "true"
+    ? "upgrade-insecure-requests;"
+    : ""
+  }
 `;
 
 /** @type {import('next').NextConfig} */
@@ -73,21 +72,18 @@ const nextConfig = {
     return [
       {
         source: "/api/docs/:path*", // catch /api/docs and /api/docs/...
-        destination: `${
-          process.env.INTERNAL_URL || "http://localhost:8080"
-        }/docs/:path*`,
+        destination: `${process.env.INTERNAL_URL || "http://localhost:8080"
+          }/docs/:path*`,
       },
       {
         source: "/api/docs", // if you also need the exact /api/docs
-        destination: `${
-          process.env.INTERNAL_URL || "http://localhost:8080"
-        }/docs`,
+        destination: `${process.env.INTERNAL_URL || "http://localhost:8080"
+          }/docs`,
       },
       {
         source: "/openapi.json",
-        destination: `${
-          process.env.INTERNAL_URL || "http://localhost:8080"
-        }/openapi.json`,
+        destination: `${process.env.INTERNAL_URL || "http://localhost:8080"
+          }/openapi.json`,
       },
     ];
   },

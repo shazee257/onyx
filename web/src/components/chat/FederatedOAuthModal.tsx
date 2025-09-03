@@ -149,12 +149,12 @@ export function FederatedOAuthModal() {
   };
 
   const applicationName =
-    settings?.enterpriseSettings?.application_name || "Onyx";
+    settings?.enterpriseSettings?.application_name || "Gen.Ai";
 
   if (skipCount >= MAX_SKIP_COUNT) {
     return (
       <Modal
-        onOutsideClick={() => {}}
+        onOutsideClick={() => { }}
         hideCloseButton={true}
         width="w-full max-w-xl"
       >

@@ -22,9 +22,9 @@ This Python script automates the process of running search quality tests for a b
    ```
    export PYTHONPATH=$PYTHONPATH:/path/to/onyx/backend
    ```
-   Replace `/path/to/onyx` with the actual path to your Onyx repository.
+   Replace `/path/to/onyx` with the actual path to your Gen.Ai repository.
    After adding this line, restart your terminal or run `source ~/.bashrc` (or the appropriate config file) to apply the changes.
-5. Navigate to Onyx repo:
+5. Navigate to Gen.Ai repo:
 
 ```
 cd path/to/onyx

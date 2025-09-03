@@ -22,7 +22,7 @@ MOCK_REFRESH_TOKEN = (
 MOCK_TOKEN_TYPE = "user"
 MOCK_EXPIRES_IN = 31659
 MOCK_TEAM_ID = "T05SS40AFAM"
-MOCK_TEAM_NAME = "Onyx Team"
+MOCK_TEAM_NAME = "Gen.Ai Team"
 
 
 class TestSlackFederatedConnector:

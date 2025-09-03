@@ -126,7 +126,7 @@ def _drive_folder_to_onyx_group(
     group_email_to_member_emails_map: dict[str, list[str]],
 ) -> ExternalUserGroup:
     """
-    Converts a folder into an Onyx group.
+    Converts a folder into an Gen.Ai group.
     """
     anyone_can_access = False
     folder_member_emails: set[str] = set()
@@ -404,7 +404,7 @@ def gdrive_group_sync(
         admin_service, google_drive_connector.google_domain
     )
 
-    # Each google group is an Onyx group, yield those
+    # Each google group is an Gen.Ai group, yield those
     group_email_to_member_emails_map: dict[str, list[str]] = {}
     for group_email in all_group_emails:
         onyx_group = _google_group_to_onyx_group(admin_service, group_email)

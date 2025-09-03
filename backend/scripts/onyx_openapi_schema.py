@@ -34,7 +34,7 @@ def go(filename: str) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Export OpenAPI schema for Onyx API (does not require starting API server)"
+        description="Export OpenAPI schema for Gen.Ai API (does not require starting API server)"
     )
     parser.add_argument(
         "--filename", "-f", help="Filename to write to", default="openapi.json"

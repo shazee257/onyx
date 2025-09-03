@@ -1,5 +1,5 @@
 # This file is used to demonstrate how to use the backend APIs directly
-# In this case, the equivalent of asking a question in Onyx Chat in a new chat session
+# In this case, the equivalent of asking a question in Gen.Ai Chat in a new chat session
 import argparse
 import json
 import os
@@ -68,17 +68,17 @@ if __name__ == "__main__":
         "--onyx-url",
         type=str,
         default="http://localhost:80",
-        help="Onyx URL, should point to Onyx nginx.",
+        help="Gen.Ai URL, should point to Gen.Ai nginx.",
     )
     parser.add_argument(
         "--test-question",
         type=str,
-        default="What is Onyx?",
+        default="What is Gen.Ai?",
         help="Test question for new Chat Session.",
     )
 
     # Not needed if Auth is disabled
-    # Or for Onyx MIT API key must be replaced with session cookie
+    # Or for Gen.Ai MIT API key must be replaced with session cookie
     api_key = os.environ.get("DANSWER_API_KEY")
 
     args = parser.parse_args()

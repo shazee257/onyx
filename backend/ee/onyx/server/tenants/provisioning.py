@@ -531,7 +531,7 @@ async def setup_tenant(tenant_id: str) -> None:
             # Configure default API keys
             configure_default_api_keys(db_session)
 
-            # Set up Onyx with appropriate settings
+            # Set up Gen.Ai with appropriate settings
             current_search_settings = (
                 db_session.query(SearchSettings)
                 .filter_by(status=IndexModelStatus.FUTURE)

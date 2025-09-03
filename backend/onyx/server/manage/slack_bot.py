@@ -69,7 +69,7 @@ def _form_channel_config(
 
     if respond_tag_only and respond_member_group_list:
         raise ValueError(
-            "Cannot set OnyxBot to only respond to tags only and "
+            "Cannot set Gen.Ai to only respond to tags only and "
             "also respond to a predetermined set of users."
         )
 
@@ -78,7 +78,7 @@ def _form_channel_config(
         and slack_channel_config_creation_request.respond_member_group_list
     ):
         raise ValueError(
-            "Cannot set OnyxBot to respond to users in a private (ephemeral) message "
+            "Cannot set Gen.Ai to respond to users in a private (ephemeral) message "
             "and also respond to a selected list of users."
         )
 
@@ -187,7 +187,7 @@ def patch_slack_channel_config(
             if not persona.name.startswith(SLACK_BOT_PERSONA_PREFIX):
                 # Don't update actual non-slackbot specific personas
                 # Since this one specified document sets, we have to create a new persona
-                # for this OnyxBot config
+                # for this Gen.Ai config
                 existing_persona_id = None
             else:
                 existing_persona_id = existing_slack_channel_config.persona_id

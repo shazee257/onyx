@@ -13,7 +13,7 @@ from tests.daily.connectors.utils import to_documents
 TEAMS_THREAD = [
     # Posted in "Public Channel"
     TeamsThread(
-        thread="This is the first message in Onyx-Testing ...This is a reply!This is a second reply.Third.4th.5",
+        thread="This is the first message in Gen.Ai-Testing ...This is a reply!This is a second reply.Third.4th.5",
         external_access=ExternalAccess(
             external_user_emails=set(),
             external_user_group_ids=set(),
@@ -89,7 +89,7 @@ def teams_credentials() -> dict[str, str]:
 def teams_connector(
     teams_credentials: dict[str, str],
 ) -> TeamsConnector:
-    teams_connector = TeamsConnector(teams=["Onyx-Testing"])
+    teams_connector = TeamsConnector(teams=["Gen.Ai-Testing"])
     teams_connector.load_credentials(teams_credentials)
     return teams_connector
 

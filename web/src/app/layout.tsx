@@ -57,7 +57,7 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 
   return {
-    title: enterpriseSettings?.application_name || "Onyx",
+    title: enterpriseSettings?.application_name || "Gen.Ai",
     description: "Question answering for your documents",
     icons: {
       icon: logoLocation,

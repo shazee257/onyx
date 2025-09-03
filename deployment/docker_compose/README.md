@@ -1,6 +1,6 @@
 <!-- ONYX_METADATA={"link": "https://github.com/onyx-dot-app/onyx/blob/main/deployment/docker_compose/README.md"} -->
 
-# Deploying Onyx using Docker Compose
+# Deploying Gen.Ai using Docker Compose
 
 For general information, please read the instructions in this [README](https://github.com/onyx-dot-app/onyx/blob/main/deployment/README.md).
 
@@ -10,7 +10,7 @@ This part is elaborated precisely in this [README](https://github.com/onyx-dot-a
 
 ## Deploy in a system with GPU support
 
-Running Model servers with GPU support while indexing and querying can result in significant improvements in performance. This is highly recommended if you have access to resources. Currently, Onyx offloads embedding model and tokenizers to the GPU VRAM and the size needed depends on chosen embedding model. For example, the embedding model `nomic-ai/nomic-embed-text-v1` takes up about 1GB of VRAM. That means running this model for inference and embedding pipeline would require roughly 2GB of VRAM.
+Running Model servers with GPU support while indexing and querying can result in significant improvements in performance. This is highly recommended if you have access to resources. Currently, Gen.Ai offloads embedding model and tokenizers to the GPU VRAM and the size needed depends on chosen embedding model. For example, the embedding model `nomic-ai/nomic-embed-text-v1` takes up about 1GB of VRAM. That means running this model for inference and embedding pipeline would require roughly 2GB of VRAM.
 
 ### Setup
 
@@ -33,7 +33,7 @@ For GPUs to be accessible to containers, you will need the container toolkit. Pl
 
 ### Launching with GPU
 
-1. To run Onyx with GPU, navigate to `docker_compose` directory and run the following:
+1. To run Gen.Ai with GPU, navigate to `docker_compose` directory and run the following:
 
    - `docker compose -f docker-compose.gpu-dev.yml -p onyx-stack up -d --pull always --force-recreate` - or run: `docker compose -f docker-compose.gpu-dev.yml -p onyx-stack up -d --build --force-recreate`
      to build from source

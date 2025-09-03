@@ -17,7 +17,7 @@ class ExternalAccess:
     external_user_emails: set[str]
     # Names or external IDs of groups with access to the doc
     external_user_group_ids: set[str]
-    # Whether the document is public in the external system or Onyx
+    # Whether the document is public in the external system or Gen.Ai
     is_public: bool
 
     def __str__(self) -> str:
@@ -107,7 +107,7 @@ class DocExternalAccess:
 
 @dataclass(frozen=True, init=False)
 class DocumentAccess(ExternalAccess):
-    # User emails for Onyx users, None indicates admin
+    # User emails for Gen.Ai users, None indicates admin
     user_emails: set[str | None]
 
     # Names of user groups associated with this document

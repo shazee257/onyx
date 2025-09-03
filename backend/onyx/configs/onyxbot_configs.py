@@ -1,7 +1,7 @@
 import os
 
 #####
-# Onyx Slack Bot Configs
+# Gen.Ai Slack Bot Configs
 #####
 DANSWER_BOT_NUM_RETRIES = int(os.environ.get("DANSWER_BOT_NUM_RETRIES", "5"))
 # How much of the available input context can be used for thread context
@@ -10,15 +10,15 @@ MAX_THREAD_CONTEXT_PERCENTAGE = 512 * 2 / 3072
 DANSWER_BOT_NUM_DOCS_TO_DISPLAY = int(
     os.environ.get("DANSWER_BOT_NUM_DOCS_TO_DISPLAY", "5")
 )
-# If the LLM fails to answer, Onyx can still show the "Reference Documents"
+# If the LLM fails to answer, Gen.Ai can still show the "Reference Documents"
 DANSWER_BOT_DISABLE_DOCS_ONLY_ANSWER = os.environ.get(
     "DANSWER_BOT_DISABLE_DOCS_ONLY_ANSWER", ""
 ).lower() not in ["false", ""]
-# When Onyx is considering a message, what emoji does it react with
+# When Gen.Ai is considering a message, what emoji does it react with
 DANSWER_REACT_EMOJI = os.environ.get("DANSWER_REACT_EMOJI") or "eyes"
 # When User needs more help, what should the emoji be
 DANSWER_FOLLOWUP_EMOJI = os.environ.get("DANSWER_FOLLOWUP_EMOJI") or "sos"
-# What kind of message should be shown when someone gives an AI answer feedback to OnyxBot
+# What kind of message should be shown when someone gives an AI answer feedback to Gen.Ai
 # Defaults to Private if not provided or invalid
 # Private: Only visible to user clicking the feedback
 # Anonymous: Public but anonymous
@@ -26,14 +26,14 @@ DANSWER_FOLLOWUP_EMOJI = os.environ.get("DANSWER_FOLLOWUP_EMOJI") or "sos"
 DANSWER_BOT_FEEDBACK_VISIBILITY = (
     os.environ.get("DANSWER_BOT_FEEDBACK_VISIBILITY") or "private"
 )
-# Should OnyxBot send an apology message if it's not able to find an answer
-# That way the user isn't confused as to why OnyxBot reacted but then said nothing
+# Should Gen.Ai send an apology message if it's not able to find an answer
+# That way the user isn't confused as to why Gen.Ai reacted but then said nothing
 # Off by default to be less intrusive (don't want to give a notif that just says we couldnt help)
 NOTIFY_SLACKBOT_NO_ANSWER = (
     os.environ.get("NOTIFY_SLACKBOT_NO_ANSWER", "").lower() == "true"
 )
 # Mostly for debugging purposes but it's for explaining what went wrong
-# if OnyxBot couldn't find an answer
+# if Gen.Ai couldn't find an answer
 DANSWER_BOT_DISPLAY_ERROR_MSGS = os.environ.get(
     "DANSWER_BOT_DISPLAY_ERROR_MSGS", ""
 ).lower() not in [
@@ -61,7 +61,7 @@ DANSWER_BOT_REPHRASE_MESSAGE = (
 )
 
 # DANSWER_BOT_RESPONSE_LIMIT_PER_TIME_PERIOD is the number of
-# responses OnyxBot can send in a given time period.
+# responses Gen.Ai can send in a given time period.
 # Set to 0 to disable the limit.
 DANSWER_BOT_RESPONSE_LIMIT_PER_TIME_PERIOD = int(
     os.environ.get("DANSWER_BOT_RESPONSE_LIMIT_PER_TIME_PERIOD", "5000")

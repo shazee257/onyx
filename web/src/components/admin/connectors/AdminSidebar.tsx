@@ -59,10 +59,9 @@ export function AdminSidebar({ collections }: { collections: Collection[] }) {
               <Link key={item.link} href={item.link}>
                 <button
                   className={`text-sm text-text-700 block flex gap-x-2 items-center w-52 py-2.5 px-2 text-left hover:bg-background-settings-hover dark:hover:bg-neutral-800 rounded
-                    ${
-                      pathname.startsWith(item.link)
-                        ? "bg-background-settings-hover dark:bg-neutral-700"
-                        : ""
+                    ${pathname.startsWith(item.link)
+                      ? "bg-background-settings-hover dark:bg-neutral-700"
+                      : ""
                     }`}
                 >
                   {item.name}
@@ -78,7 +77,7 @@ export function AdminSidebar({ collections }: { collections: Collection[] }) {
           key={"onyxVersion"}
         >
           <h2 className="text-xs text-text/40 w-52 font-medium">
-            Onyx version: {combinedSettings.webVersion}
+            Gen.Ai version: {combinedSettings.webVersion}
           </h2>
         </div>
       )}

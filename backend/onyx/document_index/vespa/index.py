@@ -321,10 +321,10 @@ class VespaIndex(DocumentIndex):
         response = requests.post(deploy_url, headers=headers, data=zip_file)
         if response.status_code != 200:
             logger.error(
-                f"Failed to prepare Vespa Onyx Index. Response: {response.text}"
+                f"Failed to prepare Vespa Gen.Ai Index. Response: {response.text}"
             )
             raise RuntimeError(
-                f"Failed to prepare Vespa Onyx Index. Response: {response.text}"
+                f"Failed to prepare Vespa Gen.Ai Index. Response: {response.text}"
             )
 
     @staticmethod
@@ -419,7 +419,7 @@ class VespaIndex(DocumentIndex):
 
         if response.status_code != 200:
             raise RuntimeError(
-                f"Failed to prepare Vespa Onyx Indexes. Response: {response.text}"
+                f"Failed to prepare Vespa Gen.Ai Indexes. Response: {response.text}"
             )
 
     def index(

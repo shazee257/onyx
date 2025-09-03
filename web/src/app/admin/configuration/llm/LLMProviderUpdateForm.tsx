@@ -41,7 +41,7 @@ export function LLMProviderUpdateForm({
   setPopup?: (popup: PopupSpec) => void;
   hideSuccess?: boolean;
 
-  // Set this when this is the first time the user is setting Onyx up.
+  // Set this when this is the first time the user is setting Gen.Ai up.
   firstTimeConfiguration?: boolean;
 }) {
   const { mutate } = useSWRConfig();
@@ -84,12 +84,12 @@ export function LLMProviderUpdateForm({
     // It will be deleted from the map prior to submission.
     selected_model_names: existingLlmProvider
       ? existingLlmProvider.model_configurations
-          .filter((modelConfiguration) => modelConfiguration.is_visible)
-          .map((modelConfiguration) => modelConfiguration.name)
+        .filter((modelConfiguration) => modelConfiguration.is_visible)
+        .map((modelConfiguration) => modelConfiguration.name)
       : // default case - use built in "visible" models
-        (llmProviderDescriptor.model_configurations
-          .filter((modelConfiguration) => modelConfiguration.is_visible)
-          .map((modelConfiguration) => modelConfiguration.name) as string[]),
+      (llmProviderDescriptor.model_configurations
+        .filter((modelConfiguration) => modelConfiguration.is_visible)
+        .map((modelConfiguration) => modelConfiguration.name) as string[]),
   };
 
   // Setup validation schema if required
@@ -106,22 +106,21 @@ export function LLMProviderUpdateForm({
       : Yup.string(),
     ...(llmProviderDescriptor.custom_config_keys
       ? {
-          custom_config: Yup.object(
-            llmProviderDescriptor.custom_config_keys.reduce(
-              (acc, customConfigKey) => {
-                if (customConfigKey.is_required) {
-                  acc[customConfigKey.name] = Yup.string().required(
-                    `${
-                      customConfigKey.display_name || customConfigKey.name
-                    } is required`
-                  );
-                }
-                return acc;
-              },
-              {} as { [key: string]: Yup.StringSchema }
-            )
-          ),
-        }
+        custom_config: Yup.object(
+          llmProviderDescriptor.custom_config_keys.reduce(
+            (acc, customConfigKey) => {
+              if (customConfigKey.is_required) {
+                acc[customConfigKey.name] = Yup.string().required(
+                  `${customConfigKey.display_name || customConfigKey.name
+                  } is required`
+                );
+              }
+              return acc;
+            },
+            {} as { [key: string]: Yup.StringSchema }
+          )
+        ),
+      }
       : {}),
     deployment_name: llmProviderDescriptor.deployment_name_required
       ? Yup.string().required("Deployment Name is required")
@@ -193,8 +192,7 @@ export function LLMProviderUpdateForm({
         }
 
         const response = await fetch(
-          `${LLM_PROVIDERS_ADMIN_URL}${
-            existingLlmProvider ? "" : "?is_creation=true"
+          `${LLM_PROVIDERS_ADMIN_URL}${existingLlmProvider ? "" : "?is_creation=true"
           }`,
           {
             method: "PUT",

@@ -114,7 +114,7 @@ def get_external_access_for_raw_gdrive_file(
     for permission in permissions_list:
         # if the permission is inherited, do not add it directly to the file
         # instead, add the folder ID as a group that has access to the file
-        # we will then handle mapping that folder to the list of Onyx users
+        # we will then handle mapping that folder to the list of Gen.Ai users
         # in the group sync job
         # NOTE: this doesn't handle the case where a folder initially has no
         # permissioning, but then later that folder is shared with a user or group.

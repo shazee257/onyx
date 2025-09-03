@@ -81,7 +81,7 @@ class SearchToolConfig(BaseModel):
     chunks_below: int = 0
     full_doc: bool = False
     latest_query_files: list[InMemoryChatFile] | None = None
-    # Use with care, should only be used for OnyxBot in channels with multiple users
+    # Use with care, should only be used for Gen.Ai in channels with multiple users
     bypass_acl: bool = False
 
 
@@ -277,7 +277,7 @@ def construct_tools(
                 except ValueError as e:
                     logger.error(f"Failed to initialize Internet Search Tool: {e}")
                     raise ValueError(
-                        "Internet search tool requires a search provider API key, please contact your Onyx admin to get it added!"
+                        "Internet search tool requires a search provider API key, please contact your Gen.Ai admin to get it added!"
                     )
             # Handle Okta Profile Tool
             elif tool_cls.__name__ == OktaProfileTool.__name__:

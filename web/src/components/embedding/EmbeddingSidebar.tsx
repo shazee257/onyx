@@ -40,7 +40,7 @@ export default function EmbeddingSidebar() {
               {enterpriseSettings && enterpriseSettings.application_name ? (
                 <HeaderTitle>{enterpriseSettings.application_name}</HeaderTitle>
               ) : (
-                <HeaderTitle>Onyx</HeaderTitle>
+                <HeaderTitle>Gen.Ai</HeaderTitle>
               )}
             </div>
           </div>
@@ -78,9 +78,8 @@ export default function EmbeddingSidebar() {
                         </div>
                       </div>
                       <div
-                        className={`${
-                          index <= formStep ? "text-text-800" : "text-text-500"
-                        }`}
+                        className={`${index <= formStep ? "text-text-800" : "text-text-500"
+                          }`}
                       >
                         {step}
                       </div>

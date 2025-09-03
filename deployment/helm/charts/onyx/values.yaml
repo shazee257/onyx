@@ -3,9 +3,9 @@
 # Declare variables to be passed into your templates.
 
 global:
-  # Global version for all Onyx components (overrides .Chart.AppVersion)
+  # Global version for all Gen.Ai components (overrides .Chart.AppVersion)
   version: "latest"
-  # Global pull policy for all Onyx component images
+  # Global pull policy for all Gen.Ai component images
   pullPolicy: "IfNotPresent"
 
 postgresql:
@@ -630,7 +630,7 @@ auth:
     s3_aws_secret_access_key: "minioadmin"
 
 configMap:
-  # Change this for production uses unless Onyx is only accessible behind VPN
+  # Change this for production uses unless Gen.Ai is only accessible behind VPN
   AUTH_TYPE: "disabled"
   # 1 Day Default
   SESSION_EXPIRE_TIME_SECONDS: "86400"
@@ -693,7 +693,7 @@ configMap:
   CELERY_WORKER_DOCPROCESSING_CONCURRENCY: ""
   CELERY_WORKER_LIGHT_CONCURRENCY: ""
   CELERY_WORKER_LIGHT_PREFETCH_MULTIPLIER: ""
-  # OnyxBot SlackBot Configs
+  # Gen.Ai SlackBot Configs
   DANSWER_BOT_DISABLE_DOCS_ONLY_ANSWER: ""
   DANSWER_BOT_DISPLAY_ERROR_MSGS: ""
   DANSWER_BOT_RESPOND_EVERY_CHANNEL: ""

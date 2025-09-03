@@ -11,7 +11,7 @@ from onyx.server.query_and_chat.streaming_models import CitationInfo
 
 
 """
-This module contains tests for the citation extraction functionality in Onyx.
+This module contains tests for the citation extraction functionality in Gen.Ai.
 
 The tests focus on the `extract_citations_from_stream` function, which processes
 a stream of tokens and extracts citations, replacing them with properly formatted

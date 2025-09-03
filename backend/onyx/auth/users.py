@@ -1152,7 +1152,7 @@ async def current_admin_user(user: User | None = Depends(current_user)) -> User 
 
 
 def get_default_admin_user_emails_() -> list[str]:
-    # No default seeding available for Onyx MIT
+    # No default seeding available for Gen.Ai MIT
     return []
 
 

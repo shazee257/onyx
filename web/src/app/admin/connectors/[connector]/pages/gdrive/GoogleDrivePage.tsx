@@ -139,21 +139,21 @@ const GDriveMain = ({
   const googleDrivePublicUploadedCredential:
     | Credential<GoogleDriveCredentialJson>
     | undefined = credentialsData.find(
-    (credential) =>
-      credential.credential_json?.google_tokens &&
-      credential.admin_public &&
-      credential.source === "google_drive" &&
-      credential.credential_json.authentication_method !== "oauth_interactive"
-  );
+      (credential) =>
+        credential.credential_json?.google_tokens &&
+        credential.admin_public &&
+        credential.source === "google_drive" &&
+        credential.credential_json.authentication_method !== "oauth_interactive"
+    );
 
   // Get the service account credential
   const googleDriveServiceAccountCredential:
     | Credential<GoogleDriveServiceAccountCredentialJson>
     | undefined = credentialsData.find(
-    (credential) =>
-      credential.credential_json?.google_service_account_key &&
-      credential.source === "google_drive"
-  );
+      (credential) =>
+        credential.credential_json?.google_service_account_key &&
+        credential.source === "google_drive"
+    );
 
   return (
     <>
@@ -166,7 +166,7 @@ const GDriveMain = ({
         onSuccess={handleRefresh}
         existingAuthCredential={Boolean(
           googleDrivePublicUploadedCredential ||
-            googleDriveServiceAccountCredential
+          googleDriveServiceAccountCredential
         )}
       />
 
@@ -174,7 +174,7 @@ const GDriveMain = ({
         (appCredentialData?.client_id ||
           serviceAccountKeyData?.service_account_email) && (
           <>
-            <Title className="mb-2 mt-6">Step 2: Authenticate with Onyx</Title>
+            <Title className="mb-2 mt-6">Step 2: Authenticate with Gen.Ai</Title>
             <DriveAuthSection
               setPopup={setPopup}
               refreshCredentials={handleRefresh}

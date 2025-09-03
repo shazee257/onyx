@@ -5,7 +5,7 @@ from enum import auto
 from enum import Enum
 
 
-ONYX_DEFAULT_APPLICATION_NAME = "Onyx"
+ONYX_DEFAULT_APPLICATION_NAME = "Gen.Ai"
 ONYX_SLACK_URL = "https://join.slack.com/t/onyx-dot-app/shared_invite/zt-2twesxdr6-5iQitKZQpgq~hYIZ~dv3KA"
 ONYX_EMAILABLE_LOGO_MAX_DIM = 512
 
@@ -42,9 +42,9 @@ ONYX_METADATA_FILENAME = ".onyx_metadata.json"
 
 # Messages
 DISABLED_GEN_AI_MSG = (
-    "Your System Admin has disabled the Generative AI functionalities of Onyx.\n"
+    "Your System Admin has disabled the Generative AI functionalities of Gen.Ai.\n"
     "Please contact them if you wish to have this enabled.\n"
-    "You can still use Onyx as a search engine."
+    "You can still use Gen.Ai as a search engine."
 )
 
 #####
@@ -148,7 +148,7 @@ TMP_DRALPHA_PERSONA_NAME = "KG Beta"
 
 
 class DocumentSource(str, Enum):
-    # Special case, document passed in via Onyx APIs without specifying a source type
+    # Special case, document passed in via Gen.Ai APIs without specifying a source type
     INGESTION_API = "ingestion_api"
     SLACK = "slack"
     WEB = "web"
@@ -531,7 +531,7 @@ NUM_DAYS_TO_KEEP_INDEX_ATTEMPTS = NUM_DAYS_TO_KEEP_CHECKPOINTS + 1
 
 # TODO: this should be stored likely in database
 DocumentSourceDescription: dict[DocumentSource, str] = {
-    # Special case, document passed in via Onyx APIs without specifying a source type
+    # Special case, document passed in via Gen.Ai APIs without specifying a source type
     DocumentSource.INGESTION_API: "ingestion_api",
     DocumentSource.SLACK: "slack channels for discussions and collaboration",
     DocumentSource.WEB: "indexed web pages",

@@ -424,7 +424,7 @@ class SearchAnswerAnalyzer:
 
     @retry(tries=3, delay=1, backoff=2)
     def _perform_oneshot_qa(self, query: str) -> OneshotQAResult:
-        """Perform a OneShot QA query against the Onyx API and time it."""
+        """Perform a OneShot QA query against the Gen.Ai API and time it."""
         # create the OneShot QA request
         messages = [ThreadMessage(message=query, sender=None, role=MessageType.USER)]
         filters = IndexFilters(access_control_list=None, tenant_id=self.tenant_id)
@@ -634,7 +634,7 @@ def run_search_eval(
         )
         response.raise_for_status()
     except RequestException as e:
-        raise RuntimeError(f"Could not connect to Onyx API: {e}")
+        raise RuntimeError(f"Could not connect to Gen.Ai API: {e}")
 
     # create the export folder
     export_folder = current_dir / datetime.now().strftime("eval-%Y-%m-%d-%H-%M-%S")
@@ -701,7 +701,7 @@ if __name__ == "__main__":
         "--api_endpoint",
         type=str,
         default="http://127.0.0.1:8080",
-        help="Base URL of the Onyx API server (default: %(default)s).",
+        help="Base URL of the Gen.Ai API server (default: %(default)s).",
     )
     parser.add_argument(
         "-s",

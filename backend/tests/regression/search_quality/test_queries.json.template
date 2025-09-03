@@ -1,6 +1,6 @@
 [
     {
-        "question": "What is Onyx?",
+        "question": "What is Gen.Ai?",
         "ground_truth": [
             {
                 "doc_source": "web",
