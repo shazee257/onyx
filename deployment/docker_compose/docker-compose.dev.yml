@@ -19,7 +19,7 @@ services:
       - "8080:8080"
     environment:
       # Auth Settings
-      - AUTH_TYPE=${AUTH_TYPE:-disabled}
+      - AUTH_TYPE=${AUTH_TYPE:-basic}
       - SESSION_EXPIRE_TIME_SECONDS=${SESSION_EXPIRE_TIME_SECONDS:-}
       - ENCRYPTION_KEY_SECRET=${ENCRYPTION_KEY_SECRET:-}
       - VALID_EMAIL_DOMAINS=${VALID_EMAIL_DOMAINS:-}
