@@ -2487,7 +2487,6 @@ class Prompt(Base):
     description: Mapped[str] = mapped_column(String)
     system_prompt: Mapped[str] = mapped_column(String(length=8000))
     task_prompt: Mapped[str] = mapped_column(String(length=8000))
-    include_citations: Mapped[bool] = mapped_column(Boolean, default=True)
     datetime_aware: Mapped[bool] = mapped_column(Boolean, default=True)
     # Default prompts are configured via backend during deployment
     # Treated specially (cannot be user edited etc.)
@@ -3491,7 +3490,9 @@ class ResearchAgentIterationSubStep(Base):
     )
 
     # Relationships
-    # Note: ChatMessage can be accessed via iteration.primary_message
+    # Note: ChatMessage is accessible via primary_question_id. It is tied to the
+    # primary_question_id in research_agent_iteration, which has a foreign key constraint
+    # to ChatMessage.id.
 
     __table_args__ = (
         ForeignKeyConstraint(
