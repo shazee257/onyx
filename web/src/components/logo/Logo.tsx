@@ -63,9 +63,10 @@ export function LogoType({
   size?: "small" | "default" | "large";
 }) {
   return (
-    <OnyxLogoTypeIcon
-      size={115}
-      className={`items-center w-full dark:text-[#fff]`}
-    />
+    <></>
+    // <OnyxLogoTypeIcon
+    //   size={165}
+    //   className={`items-center w-full dark:text-[#fff]`}
+    // />
   );
 }

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Logo } from "../logo/Logo";
 import { OnyxLogoTypeIcon } from "../icons/icons";
 
 export default function AuthFlowContainer({

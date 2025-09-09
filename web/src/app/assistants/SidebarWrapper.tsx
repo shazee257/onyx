@@ -89,11 +89,10 @@ export default function SidebarWrapper<T extends object>({
             bg-opacity-80
             duration-300
             ease-in-out
-            ${
-              !untoggled && (showDocSidebar || sidebarVisible)
-                ? "opacity-100 w-[250px] translate-x-0"
-                : "opacity-0 w-[200px] pointer-events-none -translate-x-10"
-            }`}
+            ${!untoggled && (showDocSidebar || sidebarVisible)
+            ? "opacity-100 w-[250px] translate-x-0"
+            : "opacity-0 w-[200px] pointer-events-none -translate-x-10"
+          }`}
       >
         <div className="w-full relative">
           {" "}

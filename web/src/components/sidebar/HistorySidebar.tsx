@@ -113,9 +113,8 @@ const SortableAssistant: React.FC<SortableAssistantProps> = ({
     >
       <DragHandle
         size={16}
-        className={`w-3 ml-[2px] mr-[2px] group-hover:visible invisible flex-none cursor-grab ${
-          !pinned ? "opacity-0" : ""
-        }`}
+        className={`w-3 ml-[2px] mr-[2px] group-hover:visible invisible flex-none cursor-grab ${!pinned ? "opacity-0" : ""
+          }`}
       />
       <div
         data-testid={`assistant-[${assistant.id}]`}
@@ -125,9 +124,8 @@ const SortableAssistant: React.FC<SortableAssistantProps> = ({
             onClick();
           }
         }}
-        className={`cursor-pointer w-full group hover:bg-background-chat-hover ${
-          active ? "bg-accent-background-selected" : ""
-        } relative flex items-center gap-x-2 py-1 px-2 rounded-md`}
+        className={`cursor-pointer w-full group hover:bg-background-chat-hover ${active ? "bg-accent-background-selected" : ""
+          } relative flex items-center gap-x-2 py-1 px-2 rounded-md`}
       >
         <AssistantIcon assistant={assistant} size={16} className="flex-none" />
         <TruncatedText
@@ -272,7 +270,6 @@ export const HistorySidebar = React.memo(
             dark:text-[#D4D4D4]
             dark:bg-[#000]
             border-sidebar-border 
-            flex 
             flex-col relative
             h-screen
             pt-2
@@ -289,7 +286,7 @@ export const HistorySidebar = React.memo(
               />
             </div>
             {page == "chat" && (
-              <div className="px-4 px-1 -mx-2 gap-y-1 flex-col text-text-history-sidebar-button flex gap-x-1.5 items-center items-center">
+              <div className="px-4 px-1 -mx-2 gap-y-1 flex-col text-text-history-sidebar-button flex gap-x-1.5 items-center">
                 <Link
                   className="w-full px-2 py-1 group rounded-md items-center hover:bg-accent-background-hovered cursor-pointer transition-all duration-150 flex gap-x-2"
                   href={
