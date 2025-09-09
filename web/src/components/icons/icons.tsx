@@ -3121,109 +3121,135 @@ export const PinnedIcon = ({
   );
 };
 
+// dt logo
 export const OnyxLogoTypeIcon = ({
-  size = 16,
+  size = 8,
   className = defaultTailwindCSS,
 }: IconProps) => {
-  const VIEWBOX_W = 2640;
-  const VIEWBOX_H = 733;
+  const VIEWBOX_W = 35;
+  const VIEWBOX_H = 30;
   const aspectRatio = VIEWBOX_W / VIEWBOX_H;
-  const height = size / aspectRatio;
-
-  // ---------- tweakables ----------
-  const cx = 520;                  // emblem center X
-  const cy = 366;                  // emblem center Y
-  const EMBLEM_RING_R = 280;       // BIGGER ring radius (was 230)
-  const GAP_BETWEEN_MARK_AND_TEXT = 80; // tighter gap (was 110)
-  // Kite proportions (scaled up with ring)
-  const KITE_LONG = 195;           // far tip from center (was 160)
-  const KITE_SIDE = 92;            // lateral offset (was 78)
-  const KITE_NEAR = 34;            // inner notch (was 28)
-  // --------------------------------
-
-  const textStartX = cx + EMBLEM_RING_R + GAP_BETWEEN_MARK_AND_TEXT;
-  const textBaselineY = 380;
+  const height = 60;
+  //size / aspectRatio;
 
   return (
-    <svg
-      role="img"
-      aria-labelledby="genai-logo-title"
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
+    <img
+      // src='https://digitrends.co/wp-content/uploads/2022/12/Logo.png'
+      src='https://media.licdn.com/dms/image/v2/D560BAQEy4kvabFamIA/company-logo_200_200/company-logo_200_200/0/1692891460782/digitrends_logo?e=1760572800&v=beta&t=Bu1IKafVmTS-64ZNQ3n9UJT-43wWzv_DfrYGhENPDBI'
+
+      alt="dt logo"
       width={size}
       height={height}
-      viewBox={`0 0 ${VIEWBOX_W} ${VIEWBOX_H}`}
-      preserveAspectRatio="xMidYMid meet"
-      style={{ width: `${size}px`, height: `${height}px` }}
-      className={`w-[${size}px] h-[${height}px] ` + (className || "")}
-    >
-      <title id="genai-logo-title">Gen.Ai — Generative AI</title>
-
-      <defs>
-        {/* Optional accent ring (override with CSS vars to recolor) */}
-        <linearGradient id="gaiGradient" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="var(--gai-start, #22d3ee)" />
-          <stop offset="100%" stopColor="var(--gai-end, #8b5cf6)" />
-        </linearGradient>
-      </defs>
-
-      {/* ===== Left emblem (larger) ===== */}
-      <g>
-        {/* Accent ring */}
-        <circle
-          cx={cx}
-          cy={cy}
-          r={EMBLEM_RING_R}
-          fill="none"
-          stroke="url(#gaiGradient)"
-          strokeWidth="20"
-          strokeOpacity=".6"
-        />
-
-        {/* Four-kite motif */}
-        <g fill="#ffffff">
-          {/* Top */}
-          <path d={`M ${cx} ${cy - KITE_LONG} L ${cx + KITE_SIDE} ${cy - KITE_SIDE} L ${cx} ${cy - KITE_NEAR} L ${cx - KITE_SIDE} ${cy - KITE_SIDE} Z`} />
-          {/* Right */}
-          <path d={`M ${cx + KITE_LONG} ${cy} L ${cx + KITE_SIDE} ${cy + KITE_SIDE} L ${cx + KITE_NEAR} ${cy} L ${cx + KITE_SIDE} ${cy - KITE_SIDE} Z`} />
-          {/* Bottom */}
-          <path d={`M ${cx} ${cy + KITE_LONG} L ${cx - KITE_SIDE} ${cy + KITE_SIDE} L ${cx} ${cy + KITE_NEAR} L ${cx + KITE_SIDE} ${cy + KITE_SIDE} Z`} />
-          {/* Left */}
-          <path d={`M ${cx - KITE_LONG} ${cy} L ${cx - KITE_SIDE} ${cy - KITE_SIDE} L ${cx - KITE_NEAR} ${cy} L ${cx - KITE_SIDE} ${cy + KITE_SIDE} Z`} />
-        </g>
-      </g>
-
-      {/* ===== Wordmark (white, tighter to the mark) ===== */}
-      <g paintOrder="stroke fill">
-        <text
-          x={textStartX}
-          y={textBaselineY}
-          fill="#ffffff"
-          fontFamily="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, 'Noto Sans', 'Liberation Sans', sans-serif"
-          fontSize="320"
-          fontWeight={900}
-          letterSpacing=".012em"
-          dominantBaseline="middle"
-          textRendering="geometricPrecision"
-        >
-          <tspan>Gen</tspan>
-          <tspan fill="#ffffff">.</tspan>
-          <tspan dx="16" letterSpacing=".02em">Ai</tspan>
-        </text>
-
-        {/* Underline accent aligned to new text start */}
-        <path
-          d={`M ${textStartX} ${textBaselineY + 130} C ${textStartX + 400} ${textBaselineY + 185}, ${textStartX + 840} ${textBaselineY + 185}, ${textStartX + 1240} ${textBaselineY + 130}`}
-          fill="none"
-          stroke="url(#gaiGradient)"
-          strokeOpacity=".35"
-          strokeWidth="22"
-          strokeLinecap="round"
-        />
-      </g>
-    </svg>
+      style={{ width: `80px`, height: `${height}px` }}
+      className={className}
+    />
   );
 };
+
+
+// export const OnyxLogoTypeIcon = ({
+//   size = 16,
+//   className = defaultTailwindCSS,
+// }: IconProps) => {
+//   const VIEWBOX_W = 2640;
+//   const VIEWBOX_H = 733;
+//   const aspectRatio = VIEWBOX_W / VIEWBOX_H;
+//   const height = size / aspectRatio;
+
+//   // ---------- tweakables ----------
+//   const cx = 520;                  // emblem center X
+//   const cy = 366;                  // emblem center Y
+//   const EMBLEM_RING_R = 280;       // BIGGER ring radius (was 230)
+//   const GAP_BETWEEN_MARK_AND_TEXT = 80; // tighter gap (was 110)
+//   // Kite proportions (scaled up with ring)
+//   const KITE_LONG = 195;           // far tip from center (was 160)
+//   const KITE_SIDE = 92;            // lateral offset (was 78)
+//   const KITE_NEAR = 34;            // inner notch (was 28)
+//   // --------------------------------
+
+//   const textStartX = cx + EMBLEM_RING_R + GAP_BETWEEN_MARK_AND_TEXT;
+//   const textBaselineY = 380;
+
+//   return (
+//     <svg
+//       role="img"
+//       aria-labelledby="genai-logo-title"
+//       version="1.1"
+//       xmlns="http://www.w3.org/2000/svg"
+//       width={size}
+//       height={height}
+//       viewBox={`0 0 ${VIEWBOX_W} ${VIEWBOX_H}`}
+//       preserveAspectRatio="xMidYMid meet"
+//       style={{ width: `${size}px`, height: `${height}px` }}
+//       className={`w-[${size}px] h-[${height}px] ` + (className || "")}
+//     >
+//       <title id="genai-logo-title">Gen.Ai — Generative AI</title>
+
+//       <defs>
+//         {/* Optional accent ring (override with CSS vars to recolor) */}
+//         <linearGradient id="gaiGradient" x1="0" y1="0" x2="1" y2="1">
+//           <stop offset="0%" stopColor="var(--gai-start, #22d3ee)" />
+//           <stop offset="100%" stopColor="var(--gai-end, #8b5cf6)" />
+//         </linearGradient>
+//       </defs>
+
+//       {/* ===== Left emblem (larger) ===== */}
+//       <g>
+//         {/* Accent ring */}
+//         <circle
+//           cx={cx}
+//           cy={cy}
+//           r={EMBLEM_RING_R}
+//           fill="none"
+//           stroke="url(#gaiGradient)"
+//           strokeWidth="20"
+//           strokeOpacity=".6"
+//         />
+
+//         {/* Four-kite motif */}
+//         <g fill="#ffffff">
+//           {/* Top */}
+//           <path d={`M ${cx} ${cy - KITE_LONG} L ${cx + KITE_SIDE} ${cy - KITE_SIDE} L ${cx} ${cy - KITE_NEAR} L ${cx - KITE_SIDE} ${cy - KITE_SIDE} Z`} />
+//           {/* Right */}
+//           <path d={`M ${cx + KITE_LONG} ${cy} L ${cx + KITE_SIDE} ${cy + KITE_SIDE} L ${cx + KITE_NEAR} ${cy} L ${cx + KITE_SIDE} ${cy - KITE_SIDE} Z`} />
+//           {/* Bottom */}
+//           <path d={`M ${cx} ${cy + KITE_LONG} L ${cx - KITE_SIDE} ${cy + KITE_SIDE} L ${cx} ${cy + KITE_NEAR} L ${cx + KITE_SIDE} ${cy + KITE_SIDE} Z`} />
+//           {/* Left */}
+//           <path d={`M ${cx - KITE_LONG} ${cy} L ${cx - KITE_SIDE} ${cy - KITE_SIDE} L ${cx - KITE_NEAR} ${cy} L ${cx - KITE_SIDE} ${cy + KITE_SIDE} Z`} />
+//         </g>
+//       </g>
+
+//       {/* ===== Wordmark (white, tighter to the mark) ===== */}
+//       <g paintOrder="stroke fill">
+//         <text
+//           x={textStartX}
+//           y={textBaselineY}
+//           fill="#ffffff"
+//           fontFamily="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, 'Noto Sans', 'Liberation Sans', sans-serif"
+//           fontSize="320"
+//           fontWeight={900}
+//           letterSpacing=".012em"
+//           dominantBaseline="middle"
+//           textRendering="geometricPrecision"
+//         >
+//           <tspan>Gen</tspan>
+//           <tspan fill="#ffffff">.</tspan>
+//           <tspan dx="16" letterSpacing=".02em">Ai</tspan>
+//         </text>
+
+//         {/* Underline accent aligned to new text start */}
+//         <path
+//           d={`M ${textStartX} ${textBaselineY + 130} C ${textStartX + 400} ${textBaselineY + 185}, ${textStartX + 840} ${textBaselineY + 185}, ${textStartX + 1240} ${textBaselineY + 130}`}
+//           fill="none"
+//           stroke="url(#gaiGradient)"
+//           strokeOpacity=".35"
+//           strokeWidth="22"
+//           strokeLinecap="round"
+//         />
+//       </g>
+//     </svg>
+//   );
+// };
 
 export const OnyxIcon = ({
   size = 16,
