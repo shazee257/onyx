@@ -330,14 +330,12 @@ services:
       - "3000:3000"            # host:container
     command: sh -c "npm run dev -- -H 0.0.0.0 -p 3000"
     environment:
-          - HOST=0.0.0.0
+      - HOST=0.0.0.0
       - PORT=3000
       - INTERNAL_URL=http://api_server:8080
       - WEB_DOMAIN=${WEB_DOMAIN:-}
       - THEME_IS_DARK=${THEME_IS_DARK:-}
       - DISABLE_LLM_DOC_RELEVANCE=${DISABLE_LLM_DOC_RELEVANCE:-}
-
-      # Enterprise Edition only
       - ENABLE_PAID_ENTERPRISE_EDITION_FEATURES=${ENABLE_PAID_ENTERPRISE_EDITION_FEATURES:-false}
       - NEXT_PUBLIC_CUSTOM_REFRESH_URL=${NEXT_PUBLIC_CUSTOM_REFRESH_URL:-}
 
