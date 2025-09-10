@@ -326,6 +326,14 @@ services:
     depends_on:
       - api_server
     restart: unless-stopped
+    # <<< ADD THESE LINES >>> 
+    ports:
+      - "3000:3000"            # host:container
+    environment:
+      - HOST=0.0.0.0
+      - PORT=3000
+    command: sh -c "npm run dev -- -H 0.0.0.0 -p 3000"
+    # <<< END ADDITIONS >>>
     environment:
       - INTERNAL_URL=http://api_server:8080
       - WEB_DOMAIN=${WEB_DOMAIN:-}
