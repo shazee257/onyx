@@ -328,11 +328,10 @@ services:
     restart: unless-stopped
     ports:
       - "3000:3000"            # host:container
-    environment:
-      - HOST=0.0.0.0
-      - PORT=3000
     command: sh -c "npm run dev -- -H 0.0.0.0 -p 3000"
     environment:
+          - HOST=0.0.0.0
+      - PORT=3000
       - INTERNAL_URL=http://api_server:8080
       - WEB_DOMAIN=${WEB_DOMAIN:-}
       - THEME_IS_DARK=${THEME_IS_DARK:-}
